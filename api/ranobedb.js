@@ -1,7 +1,7 @@
 const express = require("express");
 const axios = require("axios");
 const swaggerUi = require("swagger-ui-express");
-const swaggerDocument = require("../swagger.json"); // path dari api/ ke swagger.json
+const swaggerDocument = require("../swagger.json");
 
 const app = express();
 const BASE_URL = "https://ranobedb.org/api/v0";
