@@ -1,12 +1,16 @@
 const express = require("express");
 const axios = require("axios");
 const swaggerUi = require("swagger-ui-express");
+const cors = require("cors"); // <-- import cors
 const swaggerDocument = require("../swagger.json");
 
 const app = express();
 const BASE_URL = "https://ranobedb.org/api/v0";
 
-// Root redirect ke Swagger UI
+// Enable CORS
+app.use(cors());
+
+// Root redirect ke Swagger
 app.get("/", (req, res) => res.redirect("/docs"));
 
 // Swagger UI
@@ -52,8 +56,5 @@ app.get("/releases", async (req, res) => {
   }
 });
 
-// ========================
-// Start server
-// ========================
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`🚀 RanobeDB server running on port ${PORT}`));
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
