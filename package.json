@@ -1,9 +1,10 @@
 {
   "name": "ranobedb-vercel",
   "version": "1.0.0",
-  "description": "RanobeDB API wrapper ready for Vercel deployment with Swagger UI",
+  "description": "RanobeDB API wrapper ready for Vercel deployment using full Node.js server",
+  "main": "src/index.js",
   "scripts": {
-    "start": "vercel dev"
+    "start": "node src/index.js"
   },
   "dependencies": {
     "axios": "^1.6.0",
